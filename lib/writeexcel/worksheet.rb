@@ -4376,7 +4376,8 @@ class Worksheet < BIFFWriter
     encoding    = 0
 
     # Convert an Utf8 URL type and to a null terminated wchar string.
-    if is_utf8?(str)
+    # if is_utf8?(str)
+    if false # should never transcode internal links 
       # Quote sheet name if not already, i.e., Sheet!A1 to 'Sheet!A1'.
       url.sub!(/^(.+)!/, "'\1'!") if not url =~ /^'/
       # URL is null terminated.
